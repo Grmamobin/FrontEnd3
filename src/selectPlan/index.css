@@ -1,0 +1,3 @@
+.advanced ~ input:checked {
+  background-color: red;
+}

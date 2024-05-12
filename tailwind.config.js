@@ -31,7 +31,7 @@ export default {
   },
   plugins: [],
   screens:{
-    'mw': {'max': '1440px'},
+    'sm': '640px',
   }
 }
 
