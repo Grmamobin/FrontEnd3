@@ -1,4 +1,7 @@
 import './index.css';
+
+import checkmark from "../assets/images/icon-checkmark.svg";
+
 export default function PickAddOns(){
     return(
         <>   
@@ -10,7 +13,7 @@ export default function PickAddOns(){
             <div className="online-service flex
             justify-between border p-3 rounded-lg border-light-gray mt-5 items-center">
             <div className='flex items-center gap-4'>
-            <img className='bg-purplish-blue p-1 rounded-sm h-4' src="src/assets/images/icon-checkmark.svg" alt="checkmark" />
+            <img className='bg-purplish-blue p-1 rounded-sm h-4' src={checkmark} alt="checkmark" />
                     <div className="arcade-info">
                         <h3 className='font-bold'>Online service</h3>
                         <h4 className='text-cool-gray'>Access to multiplayer games</h4>
@@ -23,7 +26,7 @@ export default function PickAddOns(){
             <div className="larger-storage flex
             justify-between border p-3 rounded-lg border-light-gray mt-5 items-center">
             <div className='flex items-center gap-4'>
-                <img className='bg-purplish-blue p-1 rounded-sm h-4' src="src/assets/images/icon-checkmark.svg" alt="checkmark" />
+                <img className='bg-purplish-blue p-1 rounded-sm h-4' src={checkmark} alt="checkmark" />
                 <div className="arcade-info">
                     <h3 className='font-bold'>Larger storage</h3>
                     <h4 className='text-cool-gray'>Extra 1TB of cloud save</h4>
@@ -36,7 +39,7 @@ export default function PickAddOns(){
             <div className="customizable flex
             justify-between border p-3 rounded-lg border-light-gray mt-5 items-center">
             <div className='flex items-center gap-4'>
-                <img className='bg-purplish-blue p-1 rounded-sm h-4' src="src/assets/images/icon-checkmark.svg" alt="checkmark" />
+                <img className='bg-purplish-blue p-1 rounded-sm h-4' src={checkmark} alt="checkmark" />
                 <div className="arcade-info">
                     <h3 className='font-bold'>Customizable profile</h3>
                     <h4 className='text-cool-gray'>Custom theme on your profile</h4>

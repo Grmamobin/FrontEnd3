@@ -6,6 +6,9 @@ import FinishingUp from './finishingUp'
 import Confirm from './confirm5'
 import { useState } from 'react';
 import { useEffect } from 'react';
+
+import sidebarDesktop from "../src/assets/images/bg-sidebar-desktop.svg"
+import sidebarMobile from '../src/assets/images/bg-sidebar-mobile.svg';
 export default function App() {
   const[step , setStep] = useState(1);
 
@@ -76,10 +79,10 @@ export default function App() {
       <div className='left-part h-full'>
           <div className="img-view-desktop hidden
           sm:flex sm:h-full object-cover">
-            <img className='h-full' src="src/assets/images/bg-sidebar-desktop.svg" alt="leftSide" />
+            <img className='h-full' src={sidebarDesktop} alt="leftSide" />
           </div>
           <div className="img-view-mobile absolute w-full object-cover sm:hidden">
-            <img className='w-full' src="src/assets/images/bg-sidebar-mobile.svg" alt="leftSide" />
+            <img className='w-full' src={sidebarMobile} alt="leftSide" />
           </div>
 
           <div className="steps flex items-center w-full p-10 justify-evenly text-white font-ubunto-bold 

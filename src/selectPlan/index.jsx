@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import './index.css';
+
+import arconArcade from "../assets/images/icon-arcade.svg"
+import pro from "../assets/images/icon-pro.svg";
+import advanced from "../assets/images/icon-advanced.svg";
+
 export default function SelectPlan(){
     const[selected , setSelected] = useState(true);
     function yearlyEffect(){
@@ -24,7 +29,7 @@ export default function SelectPlan(){
         <div className="arcade flex gap-4 border p-3 rounded-lg border-light-gray relative">
         <input className='absolute h-full w-full
         opacity-0' type="radio" name="radio"/>
-            <img src="src/assets/images/icon-arcade.svg" alt="arcade" />
+            <img src={arconArcade} alt="arcade" />
             <div className="arcade-info">
                 <h3>Arcade</h3>
                 <h4>$9/mo</h4>
@@ -34,7 +39,7 @@ export default function SelectPlan(){
         <div className="advanced flex gap-4 mt-5 border p-3 rounded-lg border-light-gray relative">
             <input className='absolute h-full
              opacity-0 w-full' type="radio" name="radio"/>
-            <img src="src/assets/images/icon-advanced.svg" alt="advanced" />
+            <img src={advanced} alt="advanced" />
             <div className="advanced-info">
                 <h3>Advanced</h3>
                 <h4>$12/mo</h4>
@@ -43,7 +48,7 @@ export default function SelectPlan(){
         </div>
         <div className="pro flex gap-4 mt-5 border p-3 rounded-lg border-light-gray relative">
             <input className='absolute h-full w-full opacity-0' type="radio" name="radio"/>
-            <img src="src/assets/images/icon-pro.svg" alt="pro" />
+            <img src={pro} alt="pro" />
             <div className="pro-info">
                 <h3>Pro</h3>
                 <h4>$15/mo</h4>
