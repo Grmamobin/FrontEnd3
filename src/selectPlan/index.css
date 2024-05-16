@@ -1,3 +1,4 @@
-.advanced ~ input:checked {
-  background-color: red;
+.schedular-option > div:has(input[type='radio']:checked) {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsl(231, 100%, 99%);
 }
