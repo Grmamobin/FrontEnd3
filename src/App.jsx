@@ -76,10 +76,10 @@ export default function App() {
     <>
     <div className="whole-part flex flex-col sm:bg-white sm:flex-row sm:h-[100vh] sm:items-center sm:justify-center">
 {/* left part */}
-      <div className='left-part h-[100vh]'>
+      <div className='left-part h-[100vh] sm:flex sm:items-start'>
           <div className="img-view-desktop hidden
           sm:flex sm:h-full ">
-            <img className='h-full object-cover' src={sidebarDesktop} alt="leftSide" />
+            <img className='h-full min-w-[300px] object-cover' src={sidebarDesktop} alt="leftSide" />
           </div>
           <div className="img-view-mobile absolute w-full object-cover sm:hidden">
             <img className='w-full' src={sidebarMobile} alt="leftSide" />
