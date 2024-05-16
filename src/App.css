@@ -1,0 +1,8 @@
+@media screen and (min-height: 570px) {
+  .whole-part {
+    height: 100%;
+  }
+  .footer-btn {
+    position: relative;
+  }
+}

@@ -74,54 +74,64 @@ export default function App() {
 
   return (
     <>
-    <div className="whole-part flex flex-col sm:bg-white sm:flex-row sm:h-[100vh] sm:items-center sm:justify-center">
+    <div className="whole-part flex flex-col sm:bg-white sm:flex-row h-[100%] sm:width-[100%] 
+    absolute top-0 right-0 left-0 bottom-0 tall:relative
+    ">
 {/* left part */}
-      <div className='left-part h-[100vh] sm:flex sm:items-start'>
+      <div className='left-part h-[100%] sm:flex sm:items-start tall:flex tall:items-start'>
           <div className="img-view-desktop hidden
-          sm:flex sm:h-full ">
-            <img className='h-full min-w-[300px] object-cover' src={sidebarDesktop} alt="leftSide" />
+          sm:flex sm:h-full tall:flex tall:h-full rounded-none">
+            <img className='h-[100%] min-w-[300px] object-cover rounded-none ' src={sidebarDesktop} alt="leftSide" />
           </div>
-          <div className="img-view-mobile absolute w-full object-cover sm:hidden">
+          <div className="img-view-mobile absolute w-full object-cover sm:hidden tall:hidden">
             <img className='w-full' src={sidebarMobile} alt="leftSide" />
           </div>
 
           <div className="steps flex items-center p-10  justify-center text-white font-bold w-full gap-5
-          relative sm:flex-col sm:absolute sm:top-5">
-              <div className="step1 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center">
+          relative sm:flex-col sm:absolute sm:top-5
+          tall:flex-col tall:absolute tall:top-5">
+              <div className="step1 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center
+              tall:pt-5 tall:flex tall:w-full tall:gap-5 tall:items-center">
                   <div className="num1 border border-white rounded-full w-[40px] h-[40px] flex justify-center items-center">
                       <h4 className='flex justify-center'>1</h4>
                   </div>
-                  <div className="step-detail hidden sm:flex sm:flex-col">
+                  <div className="step-detail hidden sm:flex sm:flex-col
+                  tall:flex tall:flex-col">
                       <h3 className='font-light text-cool-gray'>STEP 1</h3>
                       <h2>YOUR INFO</h2>
                   </div>
               </div>
 
-              <div className="step2 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center">
+              <div className="step2 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center
+              tall:pt-5 tall:flex tall:w-full tall:gap-5 tall:items-center">
               <div className="num2 border border-white rounded-full w-[40px] h-[40px] flex justify-center items-center">
                       <h4 className='flex justify-center'>2</h4>
                   </div>
-                  <div className="step-detail hidden sm:flex flex-col">
+                  <div className="step-detail hidden sm:flex tall:flex flex-col">
                       <h3 className='font-light text-cool-gray'>STEP 2</h3>
                       <h2>SELECT PLAN</h2>
                   </div>
               </div>
 
-              <div className="step3 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center">
+              <div className="step3 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center
+              tall:pt-5 tall:flex tall:w-full tall:gap-5 tall:items-center">
               <div className="num3 border border-white rounded-full w-[40px] h-[40px] flex justify-center items-center">
                       <h4 className='flex justify-center'>3</h4>
                   </div>
-                  <div className="step-detail hidden sm:flex sm:flex-col">
+                  <div className="step-detail hidden sm:flex sm:flex-col
+                  tall:flex tall:flex-col">
                       <h3 className='font-light text-cool-gray'>STEP 3</h3>
                       <h2>ADD-ONS</h2>
                   </div>
               </div>
 
-              <div className="step4 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center">
+              <div className="step4 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center
+              tall:pt-5 tall:flex tall:w-full tall:gap-5 tall:items-center">
               <div className="num4 border border-white rounded-full w-[40px] h-[40px] flex justify-center items-center">
                       <h4 className='flex justify-center'>4</h4>
                   </div>
-                  <div className="step-detail hidden sm:flex sm:flex-col">
+                  <div className="step-detail hidden sm:flex sm:flex-col
+                  tall:flex tall:flex-col">
                       <h3 className='font-light text-cool-gray'>STEP 4</h3>
                       <h2>SUMMERY</h2>
                   </div>
@@ -130,8 +140,9 @@ export default function App() {
           </div>
     </div>
 {/* right part */}
-<div className='sm:flex sm:flex-col absolute w-full h-full sm:relative sm:pl-10'>
-    <div className="right-part bg-white flex flex-col w-[92%] p-5 ml-4 mt-[100px] border border-white rounded-lg sm:rounded-none sm:mt-0 sm:pt-20">
+<div className='sm:flex sm:flex-col absolute w-full h-full sm:relative sm:pl-10
+tall:flex tall:flex-col tall:relative tall:pl-10'>
+    <div className="right-part bg-white flex flex-col w-[92%] p-5 ml-4 mt-[100px] border border-white rounded-lg sm:rounded-none sm:mt-0 sm:pt-20 tall:rounded-none tall:mt-0 tall:pt-20">
     {step === 1 && <PersonalInfoPage/>}
     {step === 2 && <SelectPlan/>}
     {step === 3 && <PickAddOns/>}
@@ -141,7 +152,7 @@ export default function App() {
 
     </div>
 {/* footer part */}
-    <footer className="footer-btn bg-white flex flex-row-reverse w-full h-[80px] absolute bottom-0 left-0 right-0 sm:pb-30">
+    <footer className="footer-btn bg-white flex flex-row-reverse w-full h-[80px] absolute bottom-0 left-0 right-0 tall:relative">
       <div className='flex items-center p-5 w-full justify-between'>
         <button className='back-btn text-cool-gray'
         onClick={prevStep}>

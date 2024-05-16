@@ -28,9 +28,15 @@ export default {
       'alabaster':'hsl(231, 100%, 99%)',
       'white': 'hsl(0, 0%, 100%)',
     },
+    screens: {
+      // 'tall': { 'raw': '(max-height: 540px)' },
+      'tall': { 'raw': '(max-height: 560px) and (min-width: 600px)' },
+      'sm': '640px',
+    }
   },
   plugins: [],
   screens:{
+    'tall': { 'raw': '(max-height: 560px) or (min-width: 600px)' },
     'sm': '640px',
   }
 }
