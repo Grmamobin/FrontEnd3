@@ -24,7 +24,7 @@ export default function PickAddOns(){
         </div>
         <div className="checklist">
             <div className="online-service flex
-            justify-between border p-3 rounded-lg border-light-gray mt-5 items-center"
+            justify-between border p-3 rounded-lg border-light-gray mt-5 items-center  hover:border-purplish-blue"
             style={{
                 borderColor: selected.selected1 ? "" : "hsl(243, 100%, 62%)",
                 backgroundColor: selected.selected1 ? "" : "hsl(231, 100%, 99%)"
@@ -45,7 +45,7 @@ export default function PickAddOns(){
                     </div>
             </div>
             <div className="larger-storage flex
-            justify-between border p-3 rounded-lg border-light-gray mt-5 items-center"
+            justify-between border p-3 rounded-lg border-light-gray mt-5 items-center hover:border-purplish-blue"
             style={{
                 borderColor: selected.selected2 ? "" : "hsl(243, 100%, 62%)",
                 backgroundColor: selected.selected2 ? "" : "hsl(231, 100%, 99%)"
@@ -66,7 +66,7 @@ export default function PickAddOns(){
                 </div>
             </div>
             <div className="customizable flex
-            justify-between border p-3 rounded-lg border-light-gray mt-5 items-center"
+            justify-between border p-3 rounded-lg border-light-gray mt-5 items-center hover:border-purplish-blue"
             style={{
                 borderColor: selected.selected3 ? "" : "hsl(243, 100%, 62%)",
                 backgroundColor: selected.selected3 ? "" : "hsl(231, 100%, 99%)"

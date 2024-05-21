@@ -86,12 +86,12 @@ export default function App() {
           <div className="img-view-mobile absolute w-full object-cover sm:hidden tall:hidden">
             <img className='w-full' src={sidebarMobile} alt="leftSide" />
           </div>
-
+{/* STEPS */}
           <div className="steps flex items-center p-10  justify-center text-white font-bold w-full gap-5
-          relative sm:flex-col sm:absolute sm:top-5
-          tall:flex-col tall:absolute tall:top-5">
-              <div className="step1 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center
-              tall:pt-5 tall:flex tall:w-full tall:gap-5 tall:items-center">
+          relative sm:flex-col sm:absolute sm:top-[23px]
+          tall:flex-col tall:absolute tall:top-5 sm:pl-[24px] tall:pl-[24px]">
+              <div className="step1 sm:pt-[24px] sm:flex sm:w-full sm:gap-5 sm:items-center
+              tall:pt-[24px] tall:flex tall:w-full tall:gap-5 tall:items-center">
                   <div className="num1 border border-white rounded-full w-[40px] h-[40px] flex justify-center items-center">
                       <h4 className='flex justify-center'>1</h4>
                   </div>
@@ -102,8 +102,8 @@ export default function App() {
                   </div>
               </div>
 
-              <div className="step2 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center
-              tall:pt-5 tall:flex tall:w-full tall:gap-5 tall:items-center">
+              <div className="step2 sm:pt-[24px] sm:flex sm:w-full sm:gap-5 sm:items-center
+              tall:pt-[24px] tall:flex tall:w-full tall:gap-5 tall:items-center">
               <div className="num2 border border-white rounded-full w-[40px] h-[40px] flex justify-center items-center">
                       <h4 className='flex justify-center'>2</h4>
                   </div>
@@ -113,8 +113,8 @@ export default function App() {
                   </div>
               </div>
 
-              <div className="step3 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center
-              tall:pt-5 tall:flex tall:w-full tall:gap-5 tall:items-center">
+              <div className="step3 sm:pt-[24px] sm:flex sm:w-full sm:gap-5 sm:items-center
+              tall:pt-[24px] tall:flex tall:w-full tall:gap-5 tall:items-center">
               <div className="num3 border border-white rounded-full w-[40px] h-[40px] flex justify-center items-center">
                       <h4 className='flex justify-center'>3</h4>
                   </div>
@@ -125,8 +125,8 @@ export default function App() {
                   </div>
               </div>
 
-              <div className="step4 sm:pt-5 sm:flex sm:w-full sm:gap-5 sm:items-center
-              tall:pt-5 tall:flex tall:w-full tall:gap-5 tall:items-center">
+              <div className="step4 sm:pt-[24px] sm:flex sm:w-full sm:gap-5 sm:items-center
+              tall:pt-[24px] tall:flex tall:w-full tall:gap-5 tall:items-center">
               <div className="num4 border border-white rounded-full w-[40px] h-[40px] flex justify-center items-center">
                       <h4 className='flex justify-center'>4</h4>
                   </div>
@@ -152,17 +152,20 @@ tall:flex tall:flex-col tall:relative tall:pl-10'>
 
     </div>
 {/* footer part */}
-    <footer className="footer-btn bg-white flex flex-row-reverse w-full h-[80px] absolute bottom-0 left-0 right-0 tall:relative">
-      <div className='flex items-center p-5 w-full justify-between'>
-        <button className='back-btn text-cool-gray'
+    <footer className="footer-btn bg-white flex flex-row-reverse w-full h-[80px] absolute bottom-0 left-0 right-0 tall:relative ">
+      <div className='flex items-center p-4 w-full justify-between sm:pr-20 sm:pl-20
+      '>
+        <button className='back-btn text-cool-gray hover:text-[#000]'
         onClick={prevStep}>
           <p>Go Back</p>
         </button>
-        <button className='first-btn bg-marine-blue text-white rounded-md' onClick={nextStep}>
+        <button className='first-btn bg-marine-blue text-white rounded-md
+         hover:opacity-[0.75]' onClick={nextStep}>
             <p className='px-4 py-2'>Next Step</p>
         </button>
 
-        <button className='second-btn bg-purplish-blue text-white rounded-md hidden' onClick={nextStep}>
+        <button className='second-btn bg-purplish-blue text-white 
+        rounded-md hidden hover:opacity-[0.5]' onClick={nextStep}>
         <p className='px-4 py-2'>Confirm</p>
         </button>
           
