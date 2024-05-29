@@ -1,6 +1,6 @@
 import './index.css';
 
-import checkmark from "../assets/images/icon-checkmark.svg";
+import checkmark from "../../assets/images/icon-checkmark.svg";
 import { useState } from 'react';
 
 export default function PickAddOns(){
@@ -20,7 +20,7 @@ export default function PickAddOns(){
         <>   
         <div className="pick-add-ons-info">
         <h2 className='text-marine-blue font-bold text-3xl'>Pick add-ons</h2>
-            <p className='text-base text-cool-gray mb-4 mt-2'>Add-ons help enhance your gaming experience.</p>
+            <p className='text-base text-cool-gray mb-10 mt-2'>Add-ons help enhance your gaming experience.</p>
         </div>
         <div className="checklist">
             <div className="online-service flex
@@ -29,10 +29,11 @@ export default function PickAddOns(){
                 borderColor: selected.selected1 ? "" : "hsl(243, 100%, 62%)",
                 backgroundColor: selected.selected1 ? "" : "hsl(231, 100%, 99%)"
                 }}
+                onClick={() => selectedOption('selected1')} 
             >
             <div className='flex items-center gap-4'>
             <div className='flex flex-col'>
-                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected1 ? "none" : "flex" }} src={checkmark} onClick={() => selectedOption('selected1')} alt="checkmark"/>
+                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected1 ? "none" : "flex" }} src={checkmark} alt="checkmark"/>
                 <div className='p-1 rounded-sm h-5 border w-5' style={{ display: selected.selected1 ? "flex" : "none" }} src={checkmark} onClick={() => selectedOption('selected1')} ></div>
                 </div>
                     <div className="arcade-info">
@@ -50,10 +51,11 @@ export default function PickAddOns(){
                 borderColor: selected.selected2 ? "" : "hsl(243, 100%, 62%)",
                 backgroundColor: selected.selected2 ? "" : "hsl(231, 100%, 99%)"
                 }}
+                onClick={() => selectedOption('selected2')}
             >
             <div className='flex items-center gap-4'>
             <div className='flex flex-col'>
-                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected2 ? "none" : "flex" }} src={checkmark} onClick={() => selectedOption('selected2')} alt="checkmark"/>
+                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected2 ? "none" : "flex" }} src={checkmark}  alt="checkmark"/>
                 <div className='p-1 rounded-sm h-5 border w-5' style={{ display: selected.selected2 ? "flex" : "none" }} src={checkmark} onClick={() => selectedOption('selected2')} ></div>
                 </div>
                 <div className="arcade-info">
@@ -71,10 +73,11 @@ export default function PickAddOns(){
                 borderColor: selected.selected3 ? "" : "hsl(243, 100%, 62%)",
                 backgroundColor: selected.selected3 ? "" : "hsl(231, 100%, 99%)"
                 }}
+                onClick={() => selectedOption('selected3')}
             >
             <div className='flex items-center gap-4'>
                 <div className='flex flex-col'>
-                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected3 ? "none" : "flex" }} src={checkmark} onClick={() => selectedOption('selected3')}alt="checkmark"/>
+                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected3 ? "none" : "flex" }} src={checkmark} alt="checkmark"/>
                 <div className='p-1 rounded-sm h-5 border w-5' style={{ display: selected.selected3 ? "flex" : "none" }} src={checkmark} onClick={() => selectedOption('selected3')} ></div>
                 </div>
                 <div className="arcade-info">

@@ -30,14 +30,13 @@ export default {
     },
     screens: {
       // 'tall': { 'raw': '(max-height: 540px)' },
-      'tall': { 'raw': '(max-height: 560px) and (min-width: 600px)' },
-      'sm': '640px',
+      'tall': { 'raw': '(max-height: 560px) and (min-width: 1024px)' },
+      'sm': '1024px',
     }
   },
   plugins: [],
   screens:{
-    'tall': { 'raw': '(max-height: 560px) or (min-width: 600px)' },
-    'sm': '640px',
+    'tall': { 'raw': '(max-height: 560px) or (min-width: 1024px)' },
+    'sm': '1024px',
   }
 }
-

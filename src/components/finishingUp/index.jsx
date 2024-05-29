@@ -3,7 +3,7 @@ export default function FinishingUp(){
     <>
     <div className="finishing-up-info">
     <h2 className='text-marine-blue font-bold text-3xl'>Finishing up</h2>
-        <p className='text-base text-cool-gray mb-4 mt-2'>Double-check everything looks OK before confirmig.</p>
+        <p className='text-base text-cool-gray mb-10 mt-2'>Double-check everything looks OK before confirmig.</p>
         <div className="gray-box bg-magnolia p-3 rounded-lg text-cool-gray">
             <div className="total-arcade flex justify-between items-center">
                 <div className="arcade-montly flex flex-col">
@@ -12,7 +12,7 @@ export default function FinishingUp(){
                 </div>
                 <h3 className=" text-marine-blue font-bold">$9/mo</h3>
             </div>
-            <hr className="mt-4 mb-4"/>
+            <hr className="mt-6 mb-6"/>
             <div className="service flex justify-between mb-4">
                     <h3>Online service</h3>
                     <h3 className="t text-marine-blue">+$1/mo</h3>
