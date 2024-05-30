@@ -1,4 +1,56 @@
-export default function FinishingUp(){
+import PropTypes from 'prop-types'; 
+import { useState , useEffect } from 'react';
+export default function FinishingUp({selected , yearly , monthly , result}){
+    const [changed , setChanged] = useState(false);
+    const [price,setPrice] = useState(9);
+    useEffect(() => {
+        if (monthly == 0) {
+          setChanged(false);
+        } else {
+          setChanged(true);
+        }
+      }, [monthly , yearly]);
+
+      useEffect(() => {
+        let totalPrice = 0;
+        if (changed) {
+            if (result === "Arcade") {
+                totalPrice += 9;
+            } else if (result === "Advanced") {
+                totalPrice += 12;
+            } else {
+                totalPrice += 15;
+            }
+            if (!selected.selected1) {
+                totalPrice += 1;
+            }
+            if (!selected.selected2) {
+                totalPrice += 2;
+            }
+            if (!selected.selected3) {
+                totalPrice += 2;
+            }
+        } else {
+            if (result === "Arcade") {
+                totalPrice += 90;
+            } else if (result === "Advanced") {
+                totalPrice += 120;
+            } else {
+                totalPrice += 150;
+            }
+            if (!selected.selected1) {
+                totalPrice += 10;
+            }
+            if (!selected.selected2) {
+                totalPrice += 20;
+            }
+            if (!selected.selected3) {
+                totalPrice += 20;
+            }
+        }
+        setPrice(totalPrice);
+    }, [selected, result, changed]);
+
     return(
     <>
     <div className="finishing-up-info">
@@ -7,30 +59,41 @@ export default function FinishingUp(){
         <div className="gray-box bg-magnolia p-3 rounded-lg text-cool-gray">
             <div className="total-arcade flex justify-between items-center">
                 <div className="arcade-montly flex flex-col">
-                    <h3 className=" text-marine-blue font-bold text-[15px]">Arcade (Monthly)</h3>
+                    <h3 className=" text-marine-blue font-bold text-[15px]">
+                        {`${result} (Monthly)`}</h3>
                     <h3 className="text-[15px] underline underline-offset-2 decoration-2 w-14 hover:text-purplish-blue cursor-pointer">Change</h3>
                 </div>
-                <h3 className=" text-marine-blue font-bold">$9/mo</h3>
+                <h3 className=" text-marine-blue font-bold">
+                {result === "Arcade" ? (changed ? "$9/mo" : "$90/yr"):
+                result === "Advanced" ?(changed ? "$12/mo":"$120/yr") :
+                (changed ? "$15/mo":"$150/yr")}</h3>
             </div>
             <hr className="mt-6 mb-6"/>
-            <div className="service flex justify-between mb-4">
+            <div className="service flex justify-between mb-4" style={{display: selected.selected1?"none":"flex"}}>
                     <h3>Online service</h3>
-                    <h3 className="t text-marine-blue">+$1/mo</h3>
+                    <h3 className="t text-marine-blue">{changed?"+$1/mo": "+$10/yr"}</h3>
             </div>
-            <div className="storage flex justify-between mb-4">
+            <div className="storage flex justify-between mb-4" style={{display: selected.selected2?"none":"flex"}}>
                     <h3>Large storage</h3>
-                    <h3 className="t text-marine-blue">+$2/mo</h3>
+                    <h3 className="t text-marine-blue">{changed?"+$2/mo": "+$20/yr"}</h3>
             </div>
-            <div className="profile flex justify-between mb-4">
+            <div className="profile flex justify-between mb-4"style={{display: selected.selected3?"none":"flex"}}>
                     <h3>Customizable profile</h3>
-                    <h3 className="t text-marine-blue">+$2/mo</h3>
+                    <h3 className="t text-marine-blue">{changed?"+$2/mo": "+$20/yr"}</h3>
             </div>
         </div>
         <div className="total flex justify-between p-5">
             <h3 className="text-cool-gray">Total(per month)</h3>
-            <h3 className="font-bold text-purplish-blue text-xl">$12/mo</h3>
+            <h3 className="font-bold text-purplish-blue text-xl">{changed?`+$${price}/mo`: `+$${price}/yr`}</h3>
+    
         </div>
     </div>
     </>
     );
 }
+FinishingUp.propTypes = {
+    selected: PropTypes.object.isRequired,
+    monthly: PropTypes.string.isRequired,
+    yearly: PropTypes.string.isRequired,
+    result: PropTypes.string.isRequired,
+};

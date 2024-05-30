@@ -26,7 +26,7 @@ export default function PersonalInfoPage({ msg, setMsg }) {
                 msg.names === '' ? 'border-strawberry-red' : 'border-light-gray'
               }`}
               type="text"
-              placeholder="e.g.Stephen King"
+              placeholder="  e.g.Stephen King"
               onChange={(e) => setMsg({ ...msg, names: e.target.value })}
             />
           </div>
@@ -42,11 +42,11 @@ export default function PersonalInfoPage({ msg, setMsg }) {
               </h4>
             </div>
             <input
-              className={`input-form border w-full p-2.5 rounded-md ${
+              className={`input-form border w-full p-2.5 rounded-md  ${
                 msg.email === '' ? 'border-strawberry-red' : 'border-light-gray'
-              }`}
+               }`}
               type="email"
-              placeholder="e.g.stephenking@lorem.com"
+              placeholder="  e.g.stephenking@lorem.com"
               onChange={(e) => setMsg({ ...msg, email: e.target.value })}
             />
           </div>
@@ -66,7 +66,7 @@ export default function PersonalInfoPage({ msg, setMsg }) {
                 msg.phone === '' ? 'border-strawberry-red' : 'border-light-gray'
               }`}
               type="tel"
-              placeholder="e.g. +1 234 567 890"
+              placeholder="  e.g. +1 234 567 890"
               onChange={(e) => setMsg({ ...msg, phone: e.target.value })}
             />
           </div>

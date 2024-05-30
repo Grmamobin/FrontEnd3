@@ -15,6 +15,15 @@ export default function App() {
     email: "",
     phone: "",
   });
+  const [selected, setSelected] = useState({
+    selected1: true,
+    selected2: true,
+    selected3: true
+});
+
+  const [monthly , setMonthly] = useState(0);
+  const [yearly , setYearly] = useState(0);
+  const [result , setResult] = useState("Arcade");
 
   const emailIsvalid=()=>{
     const email = msg.email;
@@ -167,15 +176,15 @@ export default function App() {
 tall:flex tall:flex-col tall:relative tall:pl-10'>
     <section className="right-part bg-white flex flex-col w-[92%] p-5 ml-4 mt-[100px] border border-white rounded-lg sm:rounded-none sm:mt-0 sm:pt-20 tall:rounded-none tall:mt-0 tall:pt-20 sm:justify-centerd">
     {step === 1 && <PersonalInfoPage msg={msg} setMsg={setMsg}/>}
-    {step === 2 && <SelectPlan/>}
-    {step === 3 && <PickAddOns/>}
-    {step === 4 && <FinishingUp/>}
+    {step === 2 && <SelectPlan setMonthly={setMonthly} setYearly={setYearly} setResult={setResult}/>}
+    {step === 3 && <PickAddOns monthly={monthly} yearly={yearly} selected={selected} setSelected={setSelected}/>}
+    {step === 4 && <FinishingUp selected={selected} yearly={yearly} monthly={monthly} result={result}/>}
     {step === 5 && <Confirm/>}
 
 
     </section>
 {/* footer part */}
-    <footer className="footer-btn bg-white flex flex-row-reverse w-full h-[80px] absolute bottom-0 left-0 right-0 tall:relative mb-10" ref={footerBtnRef}>
+    <footer className="footer-btn bg-white flex flex-row-reverse w-full h-[80px] absolute bottom-0 left-0 right-0 tall:relative sm:mb-10" ref={footerBtnRef}>
       <div className='flex items-center p-4 w-full justify-between sm:pr-20 sm:pl-20
       '>
         <button className='back-btn text-cool-gray hover:text-[#000]'

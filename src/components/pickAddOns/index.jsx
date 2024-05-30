@@ -1,21 +1,27 @@
 import './index.css';
-
+import PropTypes from 'prop-types'; 
 import checkmark from "../../assets/images/icon-checkmark.svg";
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 
-export default function PickAddOns(){
+export default function PickAddOns({monthly , yearly , selected , setSelected}){
 
-    const [selected, setSelected] = useState({
-        "selected1": true,
-        "selected2": true,
-        "selected3": true
-    });
+
+    const [change , setChange] = useState(false);
+
     const selectedOption = (index) => {
         setSelected((checked) => ({
             ...checked,
             [index]: !checked[index]
         }));
     };
+    useEffect(() => {
+        if (monthly == 0) {
+          setChange(false);
+        } else {
+          setChange(true);
+        }
+      }, [monthly , yearly]);
+
     return(
         <>   
         <div className="pick-add-ons-info">
@@ -42,7 +48,7 @@ export default function PickAddOns(){
                     </div>
             </div>
                     <div className="price-online">
-                        <h3 className='text-purplish-blue'>+$1/mo</h3>
+                        <h3 className='text-purplish-blue'>{change?"+$1/mo":"+$10/yr"}</h3>
                     </div>
             </div>
             <div className="larger-storage flex
@@ -64,7 +70,8 @@ export default function PickAddOns(){
                 </div>
                 </div>
                 <div className="price-larger">
-                    <h3 className='text-purplish-blue'>+$2/mo</h3>
+                    <h3 className='text-purplish-blue'>
+                        {change?"+$2/mo": "+$20/yr"}</h3>
                 </div>
             </div>
             <div className="customizable flex
@@ -86,7 +93,7 @@ export default function PickAddOns(){
                 </div>
             </div>
             <div className="price-customize">
-                <h3 className='text-purplish-blue'>+$2/mo</h3>
+                <h3 className='text-purplish-blue'>{change?"+$2/mo": "+$20/yr"}</h3>
             </div>
             </div>
 
@@ -94,3 +101,9 @@ export default function PickAddOns(){
         </>
     );
 }
+PickAddOns.propTypes = {
+    monthly: PropTypes.string.isRequired,
+    yearly: PropTypes.string.isRequired,
+    selected: PropTypes.string.isRequired,
+    setSelected : PropTypes.object.isRequired,
+};
