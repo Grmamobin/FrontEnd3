@@ -27,6 +27,7 @@ export default function PersonalInfoPage({ msg, setMsg }) {
               }`}
               type="text"
               placeholder="  e.g.Stephen King"
+              value={msg.names}
               onChange={(e) => setMsg({ ...msg, names: e.target.value })}
             />
           </div>
@@ -47,6 +48,7 @@ export default function PersonalInfoPage({ msg, setMsg }) {
                }`}
               type="email"
               placeholder="  e.g.stephenking@lorem.com"
+              value={msg.email}
               onChange={(e) => setMsg({ ...msg, email: e.target.value })}
             />
           </div>
@@ -67,6 +69,7 @@ export default function PersonalInfoPage({ msg, setMsg }) {
               }`}
               type="tel"
               placeholder="  e.g. +1 234 567 890"
+              value={msg.phone}
               onChange={(e) => setMsg({ ...msg, phone: e.target.value })}
             />
           </div>

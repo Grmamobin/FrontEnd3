@@ -184,25 +184,20 @@ tall:flex tall:flex-col tall:relative tall:pl-10'>
 
     </section>
 {/* footer part */}
-    <footer className="footer-btn bg-white flex flex-row-reverse w-full h-[80px] absolute bottom-0 left-0 right-0 tall:relative sm:mb-10" ref={footerBtnRef}>
-      <div className='flex items-center p-4 w-full justify-between sm:pr-20 sm:pl-20
-      '>
-        <button className='back-btn text-cool-gray hover:text-[#000]'
-        onClick={prevStep} ref={backBtnRef}> 
-          <p>Go Back</p>
-        </button>
-        <button className='first-btn bg-marine-blue text-white rounded-md
-         hover:opacity-[0.75] px-6 py-2.5 ' onClick={emailIsvalid()?nextStep:""}
-         disabled={msg.names === '' || msg.email === '' || msg.phone === ''} ref={firstBtnRef}
-         >Next Step
-        </button>
+<footer className="footer-btn bg-white flex flex-row-reverse w-full h-[80px] absolute bottom-0 left-0 right-0" ref={footerBtnRef}>
+  <div className='flex items-center p-4 w-full justify-between sm:pr-20 sm:pl-20'>
+    <button className='back-btn text-cool-gray hover:text-[#000]' onClick={prevStep} ref={backBtnRef}>
+      <p>Go Back</p>
+    </button>
+    <button className='first-btn bg-marine-blue text-white rounded-md hover:opacity-[0.75] px-6 py-2.5' onClick={emailIsvalid() ? nextStep : ""} disabled={msg.names === '' || msg.email === '' || msg.phone === ''} ref={firstBtnRef}>
+      Next Step
+    </button>
+    <button className='second-btn bg-purplish-blue text-white rounded-md hidden hover:opacity-[0.5] px-6 py-2.5' onClick={nextStep} ref={secondBtnRef}>
+      Confirm
+    </button>
+  </div>
+</footer>
 
-        <button className='second-btn bg-purplish-blue text-white 
-        rounded-md hidden hover:opacity-[0.5] px-6 py-2.5 ' onClick={nextStep} ref={secondBtnRef}>Confirm
-        </button>
-          
-      </div>
-    </footer>
     </div>
 
   </div>
