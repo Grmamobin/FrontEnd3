@@ -115,7 +115,7 @@ export default function App() {
             <img className='w-full' src={sidebarMobile} alt="leftSide" />
           </div>
 {/* STEPS */}
-          <div className="steps flex items-center p-10  justify-center text-white font-bold w-full gap-5
+          <div className="steps flex items-center p-10  justify-center text-white font-bold w-[50%] gap-5
           relative sm:flex-col sm:absolute sm:top-[23px]  sm:ml-[24px]
           tall:flex-col tall:absolute tall:top-5 sm:pl-[24px] tall:pl-[24px">
               <div className="step1 sm:pt-[24px] sm:flex sm:w-full sm:gap-5 sm:items-center

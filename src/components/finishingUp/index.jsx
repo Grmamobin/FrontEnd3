@@ -83,7 +83,7 @@ export default function FinishingUp({selected , yearly , monthly , result}){
             </div>
         </div>
         <div className="total flex justify-between p-5">
-            <h3 className="text-cool-gray">Total(per month)</h3>
+            <h3 className="text-cool-gray">{changed? "Total(per month)":"Total(per year)"}</h3>
             <h3 className="font-bold text-purplish-blue text-xl">{changed?`+$${price}/mo`: `+$${price}/yr`}</h3>
     
         </div>

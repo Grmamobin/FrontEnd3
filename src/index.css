@@ -1,8 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: ubunto;
+  src: url('src/assets/fonts/Ubuntu-Medium.ttf');
+  font-style: normal;
+}
 
 body {
   background-color: hsl(204, 29%, 90%);
-  font-family:;
+  font-family: ubunto;
 }
