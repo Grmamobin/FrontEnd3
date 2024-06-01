@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import checkmark from "../../assets/images/icon-checkmark.svg";
 import { useState , useEffect } from 'react';
 
-export default function PickAddOns({monthly , yearly , selected , setSelected}){
+export default function PickAddOns({duration , selected , setSelected}){
 
 
     const [change , setChange] = useState(false);
@@ -15,12 +15,12 @@ export default function PickAddOns({monthly , yearly , selected , setSelected}){
         }));
     };
     useEffect(() => {
-        if (monthly == 0) {
+        if (duration == 0) {
           setChange(false);
         } else {
           setChange(true);
         }
-      }, [monthly , yearly]);
+      }, [duration]);
 
     return(
         <>   
@@ -102,8 +102,7 @@ export default function PickAddOns({monthly , yearly , selected , setSelected}){
     );
 }
 PickAddOns.propTypes = {
-    monthly: PropTypes.string.isRequired,
-    yearly: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
     selected: PropTypes.string.isRequired,
     setSelected : PropTypes.object.isRequired,
 };

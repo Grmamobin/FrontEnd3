@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types'; 
 import { useState , useEffect } from 'react';
-export default function FinishingUp({selected , yearly , monthly , result}){
+export default function FinishingUp({selected ,  duration , result}){
     const [changed , setChanged] = useState(false);
     const [price,setPrice] = useState(9);
     useEffect(() => {
-        if (monthly == 0) {
+        if (duration == 0) {
           setChanged(false);
         } else {
           setChanged(true);
         }
-      }, [monthly , yearly]);
+      }, [duration ]);
 
       useEffect(() => {
         let totalPrice = 0;
@@ -93,7 +93,6 @@ export default function FinishingUp({selected , yearly , monthly , result}){
 }
 FinishingUp.propTypes = {
     selected: PropTypes.object.isRequired,
-    monthly: PropTypes.string.isRequired,
-    yearly: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
     result: PropTypes.string.isRequired,
 };

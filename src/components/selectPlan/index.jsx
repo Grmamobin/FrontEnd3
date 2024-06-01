@@ -5,17 +5,15 @@ import arconArcade from "./../../assets/images/icon-arcade.svg"
 import pro from "./../../assets/images/icon-pro.svg";
 import advanced from "./../../assets/images/icon-advanced.svg";
 
-export default function SelectPlan({setMonthly,setYearly, setResult}){
+export default function SelectPlan({setDuration , setResult}){
     const[selected , setSelected] = useState(false);
         useEffect(() => {
           if (selected) {
-            setYearly(90);
-            setMonthly(0);
+            setDuration(0);
           } else {
-            setMonthly(9);
-            setYearly(0);
+            setDuration(9);
           }
-        }, [selected, setYearly, setMonthly]);
+        }, [selected, setDuration]);
 
         const handleRadioChange = (plan) => {
             setResult(plan);
@@ -84,7 +82,6 @@ export default function SelectPlan({setMonthly,setYearly, setResult}){
     );
 }
 SelectPlan.propTypes = {
-    setMonthly: PropTypes.func.isRequired,
-    setYearly: PropTypes.func.isRequired,
+    setDuration: PropTypes.func.isRequired,
     setResult: PropTypes.func.isRequired,
 };
