@@ -15,7 +15,7 @@ export default function PickAddOns({duration , selected , setSelected}){
         }));
     };
     useEffect(() => {
-        if (duration == 0) {
+        if (duration) {
           setChange(false);
         } else {
           setChange(true);
@@ -32,16 +32,17 @@ export default function PickAddOns({duration , selected , setSelected}){
             <div className="online-service flex
             justify-between border p-3 rounded-lg border-light-gray mt-5 items-center  hover:border-purplish-blue"
             style={{
-                borderColor: selected.selected1 ? "" : "hsl(243, 100%, 62%)",
-                backgroundColor: selected.selected1 ? "" : "hsl(231, 100%, 99%)"
+                borderColor: selected.selected1 ? "hsl(243, 100%, 62%)" : "",
+                backgroundColor: selected.selected1 ? "hsl(231, 100%, 99%)" : ""
                 }}
                 onClick={() => selectedOption('selected1')} 
             >
             <div className='flex items-center gap-4'>
-            <div className='flex flex-col'>
-                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected1 ? "none" : "flex" }} src={checkmark} alt="checkmark"/>
-                <div className='p-1 rounded-sm h-5 border w-5' style={{ display: selected.selected1 ? "flex" : "none" }} src={checkmark} onClick={() => selectedOption('selected1')} ></div>
-                </div>
+            <div className='flex flex-col' onClick={() => selectedOption('selected1')}>
+                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected1 ? "flex" : "none" }} src={checkmark}
+                alt="checkmark"  onClick={() => selectedOption('selected1')}/>
+                <div className='p-1 rounded-sm h-5 border w-5' style={{display: selected.selected1 ? "none" : "flex" }} src={checkmark} onClick={() => selectedOption('selected1')}></div>
+            </div>
                     <div className="arcade-info">
                         <h3 className='font-bold text-marine-blue'>Online service</h3>
                         <h4 className='text-cool-gray text-sm'>Access to multiplayer games</h4>
@@ -54,15 +55,15 @@ export default function PickAddOns({duration , selected , setSelected}){
             <div className="larger-storage flex
             justify-between border p-3 rounded-lg border-light-gray mt-5 items-center hover:border-purplish-blue"
             style={{
-                borderColor: selected.selected2 ? "" : "hsl(243, 100%, 62%)",
-                backgroundColor: selected.selected2 ? "" : "hsl(231, 100%, 99%)"
+                borderColor: selected.selected2 ? "hsl(243, 100%, 62%)" : "",
+                backgroundColor: selected.selected2 ? "hsl(231, 100%, 99%)" : ""
                 }}
                 onClick={() => selectedOption('selected2')}
             >
             <div className='flex items-center gap-4'>
-            <div className='flex flex-col'>
-                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected2 ? "none" : "flex" }} src={checkmark}  alt="checkmark"/>
-                <div className='p-1 rounded-sm h-5 border w-5' style={{ display: selected.selected2 ? "flex" : "none" }} src={checkmark} onClick={() => selectedOption('selected2')} ></div>
+            <div className='flex flex-col'  onClick={() => selectedOption('selected2')}>
+                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected2 ? "flex" : "none" }} src={checkmark}  alt="checkmark"  onClick={() => selectedOption('selected2')}/>
+                <div className='p-1 rounded-sm h-5 border w-5' style={{ display: selected.selected2 ? "none" : "flex" }} src={checkmark} onClick={() => selectedOption('selected2')} ></div>
                 </div>
                 <div className="arcade-info">
                     <h3 className='font-bold text-marine-blue'>Larger storage</h3>
@@ -77,15 +78,15 @@ export default function PickAddOns({duration , selected , setSelected}){
             <div className="customizable flex
             justify-between border p-3 rounded-lg border-light-gray mt-5 items-center hover:border-purplish-blue"
             style={{
-                borderColor: selected.selected3 ? "" : "hsl(243, 100%, 62%)",
-                backgroundColor: selected.selected3 ? "" : "hsl(231, 100%, 99%)"
+                borderColor: selected.selected3 ? "hsl(243, 100%, 62%)" : "",
+                backgroundColor: selected.selected3 ? "hsl(231, 100%, 99%)" : ""
                 }}
                 onClick={() => selectedOption('selected3')}
             >
             <div className='flex items-center gap-4'>
-                <div className='flex flex-col'>
-                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected3 ? "none" : "flex" }} src={checkmark} alt="checkmark"/>
-                <div className='p-1 rounded-sm h-5 border w-5' style={{ display: selected.selected3 ? "flex" : "none" }} src={checkmark} onClick={() => selectedOption('selected3')} ></div>
+                <div className='flex flex-col'  onClick={() => selectedOption('selected3')}>
+                <img className='bg-purplish-blue p-1 rounded-sm h-5 w-5' style={{ display: selected.selected3 ? "flex" : "none" }} src={checkmark} alt="checkmark"  onClick={() => selectedOption('selected3')}/>
+                <div className='p-1 rounded-sm h-5 border w-5' style={{ display: selected.selected3 ? "none" : "flex" }} src={checkmark} onClick={() => selectedOption('selected3')} ></div>
                 </div>
                 <div className="arcade-info">
                     <h3 className='font-bold text-marine-blue'>Customizable profile</h3>
@@ -102,7 +103,7 @@ export default function PickAddOns({duration , selected , setSelected}){
     );
 }
 PickAddOns.propTypes = {
-    duration: PropTypes.string.isRequired,
-    selected: PropTypes.string.isRequired,
-    setSelected : PropTypes.object.isRequired,
+    duration: PropTypes.bool.isRequired,
+    selected: PropTypes.object.isRequired,
+    setSelected : PropTypes.func.isRequired,
 };

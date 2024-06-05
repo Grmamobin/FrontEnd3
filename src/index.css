@@ -5,9 +5,23 @@
   font-family: ubunto;
   src: url('src/assets/fonts/Ubuntu-Medium.ttf');
   font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: ubunto;
+  src: url('src/assets/fonts/Ubuntu-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: ubunto;
+  src: url('src/assets/fonts/Ubuntu-Bold.ttf');
+  font-style: normal;
+  font-weight: 700;
 }
 
 body {
   background-color: hsl(204, 29%, 90%);
-  font-family: ubunto;
+  font-family: ubunto, sans-serif;
+  font-weight: 400;
 }

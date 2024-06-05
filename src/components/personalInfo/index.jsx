@@ -1,6 +1,7 @@
 import './index.css'
 import PropTypes from 'prop-types'; 
-export default function PersonalInfoPage({ msg, setMsg }) {
+export default function PersonalInfoPage({ msg, setMsg , clickedButton , emailValidation}) {
+
     return (
       <>
         <div className="personal-info-text">
@@ -15,7 +16,7 @@ export default function PersonalInfoPage({ msg, setMsg }) {
               <h4 className="text-marine-blue">Name</h4>
               <h4
                 className={`required text-strawberry-red font-bold text-[13px] ${
-                  msg.names === '' ? 'visible' : 'invisible'
+                  (clickedButton && msg.names === '' ? 'visible' : 'invisible')
                 }`}
               >
                 This field is required
@@ -23,28 +24,33 @@ export default function PersonalInfoPage({ msg, setMsg }) {
             </div>
             <input
               className={`input-form border w-full p-2.5 rounded-md ${
-                msg.names === '' ? 'border-strawberry-red' : 'border-light-gray'
+                clickedButton && msg.names === '' ? 'border-strawberry-red' : 'border-light-gray'
               }`}
               type="text"
               placeholder="  e.g.Stephen King"
               value={msg.names}
-              onChange={(e) => setMsg({ ...msg, names: e.target.value })}
+              onChange={((e) => setMsg({ ...msg, names: e.target.value }))}
             />
           </div>
           <div className="email-address-info">
             <div className="flex items-end justify-between mb-2">
               <h4 className="text-marine-blue mt-5">Email Address</h4>
               <h4
-                className={`required text-strawberry-red font-bold text-[13px] ${
-                  msg.email === '' ? 'visible' : 'invisible'
-                }`}
+                className={"required text-strawberry-red font-bold text-[13px]"}
+                style={{display: clickedButton && msg.email === ''  ? 'block':'none'}}        
               >
                 This field is required
+              </h4>
+              <h4
+                className={"required text-strawberry-red font-bold text-[13px]"}
+                style={{display: clickedButton && !emailValidation && msg.email !== ''? 'block':'none'}}    
+              >
+                Email address is wrong
               </h4>
             </div>
             <input
               className={`input-form border w-full p-2.5 rounded-md  ${
-                msg.email === '' ? 'border-strawberry-red' : 'border-light-gray'
+                (clickedButton && msg.email === '') || (clickedButton && !emailValidation && msg.email !== '') ? 'border-strawberry-red' : 'border-light-gray'
                }`}
               type="email"
               placeholder="  e.g.stephenking@lorem.com"
@@ -57,7 +63,7 @@ export default function PersonalInfoPage({ msg, setMsg }) {
               <h4 className="text-marine-blue mt-5">Phone Number</h4>
               <h4
                 className={`required text-strawberry-red font-bold text-[13px] ${
-                  msg.phone === '' ? 'visible' : 'invisible'
+                  clickedButton && msg.phone === '' ? 'visible' : 'invisible'
                 }`}
               >
                 This field is required
@@ -65,9 +71,9 @@ export default function PersonalInfoPage({ msg, setMsg }) {
             </div>
             <input
               className={`input-form border w-full p-2.5 rounded-md ${
-                msg.phone === '' ? 'border-strawberry-red' : 'border-light-gray'
+                clickedButton && msg.phone === '' ? 'border-strawberry-red' : 'border-light-gray'
               }`}
-              type="tel"
+              type="number"
               placeholder="  e.g. +1 234 567 890"
               value={msg.phone}
               onChange={(e) => setMsg({ ...msg, phone: e.target.value })}
@@ -81,4 +87,6 @@ export default function PersonalInfoPage({ msg, setMsg }) {
 PersonalInfoPage.propTypes = {
     msg: PropTypes.object.isRequired,
     setMsg: PropTypes.func.isRequired,
+    clickedButton:PropTypes.bool.isRequired,
+    emailValidation:PropTypes.bool.isRequired,
 };
